@@ -1,6 +1,3 @@
-import os
-import time
-
 from vk_bot import *
 from myVkApi import *
 
@@ -14,16 +11,24 @@ try:
 
             message = event.obj['message']
             lowMessageText = str.lower(message['text'])
-            lowMessageText = str.replace(lowMessageText, '[club226963554|@frog_nyashnost_bot] ', '')
+            lowMessageText = str.replace(lowMessageText, '[club229149546|@smart_kotyambus] ', '')
 
-            if lowMessageText == '/помощь':
-                write_msg(message['peer_id'], bot.new_message(lowMessageText), keyboard)
-            elif lowMessageText == '/ква-котик':
-                send_photo(vk, message['peer_id'], "Муррр.. муррквак.. :з",*upload_photo(upload, bot.new_message(lowMessageText)))
-            elif lowMessageText == '/фотожаба':
-                send_photo(vk, message['peer_id'], "Квак.. Квак-ква :)", *upload_photo(upload, bot.new_message(lowMessageText)))
+            if lowMessageText == '/старт':
+                write_msg(message['peer_id'], 'Мурр... Старт!', keyboard)
 
-            elif lowMessageText == '/ква-мотивация':
+            elif lowMessageText == '/обновление':
+                write_msg(message['peer_id'], 'Котик перезагружается..', keyboard)
+
+            elif lowMessageText == '/котик':
+                send_attachment(vk, message['peer_id'], "Муррр.. :)",
+                                *upload_attachment(upload, bot.new_message(lowMessageText)))
+            elif lowMessageText == '/собачка':
+                send_attachment(vk, message['peer_id'], "Мургавc..! :з",
+                                *upload_attachment(upload, bot.new_message(lowMessageText)))
+            elif lowMessageText == "/муркосмос":
+                send_attachment(vk, message['peer_id'], "Земля в иллюминаторе.. Мурлечный путь..",
+                                *upload_attachment(upload, bot.new_message(lowMessageText)))
+            elif lowMessageText == '/мотивация':
                 write_msg(message['peer_id'], bot.new_message(lowMessageText), keyboard)
 
 except Exception as e:
