@@ -1,11 +1,12 @@
 import os
 import random
 from io import BytesIO
-import requests
+import emoji
 
+import requests
 import vk_api
 from vk_api import VkUpload
-from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
+from vk_api.bot_longpoll import VkBotLongPoll
 from vk_api.keyboard import VkKeyboard
 
 tkn = os.getenv("TOKEN")
@@ -50,16 +51,16 @@ def create_empty_keyboard():
 def create_keyboard():
     keyboard = vk_api.keyboard.VkKeyboard(one_time=False)
 
-    keyboard.add_button("/Котик", color=vk_api.keyboard.VkKeyboardColor.POSITIVE)
-    keyboard.add_button("/Собачка", color=vk_api.keyboard.VkKeyboardColor.POSITIVE)
+    keyboard.add_button(emoji.emojize("/Котик :cat_face:"), color=vk_api.keyboard.VkKeyboardColor.POSITIVE)
+    keyboard.add_button(emoji.emojize("/Собачка :dog_face:"), color=vk_api.keyboard.VkKeyboardColor.POSITIVE)
 
     keyboard.add_line()
 
-    keyboard.add_button("/Муркосмос", color=vk_api.keyboard.VkKeyboardColor.POSITIVE)
+    keyboard.add_button(emoji.emojize("/Муркосмос :star:"), color=vk_api.keyboard.VkKeyboardColor.POSITIVE)
+    keyboard.add_button(emoji.emojize("/Мотивация :smiling_face_with_sunglasses:"),color=vk_api.keyboard.VkKeyboardColor.POSITIVE)
 
     keyboard.add_line()
-
-    keyboard.add_button("/Мотивация", color=vk_api.keyboard.VkKeyboardColor.POSITIVE)
+    keyboard.add_button(emoji.emojize("/Библейские_цитаты :church:"), color=vk_api.keyboard.VkKeyboardColor.POSITIVE)
 
     return keyboard.get_keyboard()
 

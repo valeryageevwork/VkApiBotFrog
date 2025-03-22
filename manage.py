@@ -1,3 +1,5 @@
+from vk_api.bot_longpoll import VkBotEventType
+
 from vk_bot import *
 from myVkApi import *
 
@@ -12,6 +14,7 @@ try:
             message = event.obj['message']
             lowMessageText = str.lower(message['text'])
             lowMessageText = str.replace(lowMessageText, '[club229149546|@smart_kotyambus] ', '')
+            lowMessageText = lowMessageText.split(" ")[0]
 
             if lowMessageText == '/старт':
                 write_msg(message['peer_id'], 'Мурр... Старт!', keyboard)
@@ -29,6 +32,8 @@ try:
                 send_attachment(vk, message['peer_id'], "Земля в иллюминаторе.. Мурлечный путь..",
                                 *upload_attachment(upload, bot.new_message(lowMessageText)))
             elif lowMessageText == '/мотивация':
+                write_msg(message['peer_id'], bot.new_message(lowMessageText), keyboard)
+            elif lowMessageText == '/библейские_цитаты':
                 write_msg(message['peer_id'], bot.new_message(lowMessageText), keyboard)
 
 except Exception as e:
