@@ -40,7 +40,7 @@
 <h2>🧩 Расширение</h2>
 <p>Проект задуман так, чтобы легко можно было подключать и другие API — пример структуры для этих целей уже есть. Можно дописать обработчики, подключать сторонние сервисы или реализовать собственную логику взаимодействия.</p>
 <h2>👥 Авторы</h2>
-<p><strong>Valery Ageev</strong> (<a href="https://github.com/valeryageevwork">https://github.com/valeryageevwork</a>)<br><strong>Lawrennn</strong></p>
+<p><strong>Valery Ageev</strong> (<a href="https://github.com/valeryageevwork">https://github.com/valeryageevwork</a>)</p>
 <p><strong>Репозиторий:</strong><br><a href="https://github.com/valeryageevwork/VkApiBotFrog">https://github.com/valeryageevwork/VkApiBotFrog</a></p>
 <hr>
 <p>VkApiBotFrog — учебный пример по работе с VK API, позволяет освоить написание собственного чат-бота, испытать на практике интеграцию с внешними сервисами, а также понять принципы коммуникации с REST API в Python.</p>
